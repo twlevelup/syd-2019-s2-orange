@@ -1,0 +1,22 @@
+{
+  "menuDetails":
+  [
+    {
+      "name": "Pappardelle",
+      "pageInfo": "A wide egg noodle with Tuscan origins, pappardelle is often served with hearty meat sauces"
+    },
+    {
+      "name": "Farfalle",
+      "pageInfo": "Also called bow tie pasta for its shape, farfalle (the Italian word for butterfly) makes a great cold pasta salad, and can also dress up a warm bowl of meat and veggies"
+    },
+    {
+      "name": "Shells",
+      "pageInfo": "Shells work in a variety of settings, depending on their size. If your shells are large enough, you can stuff and bake them, while medium-sized shells work well in casseroles and with meat sauces. Reserve the smallest shells for adding to soups and stews."
+    },
+    {
+      "name": "Campanelle",
+      "pageInfo": "Literally meaning “bellflowers,” campanelle sports a very unique shape that’s great at capturing thick, creamy, or meaty sauces. And they work wonders in cheesy bowls, too."
+    }
+  ]
+}
+
