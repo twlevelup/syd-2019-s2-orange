@@ -15,14 +15,11 @@ describe('TeamPage', () => {
 
     it('should contain team members names', () => {
       const page = new TeamPage();
-<<<<<<< HEAD
       expect(page.render()).toContain("Ray");
       expect(page.render()).toContain("Daniel");
       expect(page.render()).toContain("Sarang Love");
-=======
       expect(page.render()).toContain("hayden");
       expect(page.render()).toContain("jo");
->>>>>>> added jo and hayden to teampage
     });
   });
 
