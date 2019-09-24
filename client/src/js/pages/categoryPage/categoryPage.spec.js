@@ -6,6 +6,9 @@ describe('CategoryPage', () => {
     it('should render 4 categories', () => {
       const page = new CategoryPage();
       expect(page.render()).toContain("<div> Science </div>");
+      expect(page.render()).toContain("<div> Technology </div>");
+      expect(page.render()).toContain("<div> Engineering </div>");
+      expect(page.render()).toContain("<div> Mathematics </div>");
     });
   });
 
