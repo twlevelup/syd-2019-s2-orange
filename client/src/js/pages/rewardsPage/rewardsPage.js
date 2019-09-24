@@ -10,6 +10,10 @@ class RewardsPage extends BasePage{
   getNumberOfStars(points) {
     return points%5;
   }
+
+  getNumberOfTrophys(points) {
+    return Math.floor(points/5);
+  }
 }
 
 
