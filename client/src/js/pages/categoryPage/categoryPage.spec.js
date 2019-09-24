@@ -12,4 +12,14 @@ describe('CategoryPage', () => {
     });
   });
 
+  describe('#rightButtonEvent', () => {
+    it('should go to quizList page', () => {
+      const page = new CategoryPage();
+      spyOn(page, 'navigate');
+
+      page.rightButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('quizListPage');
+    });
+  });
+
 }); // describe CategoryPage
