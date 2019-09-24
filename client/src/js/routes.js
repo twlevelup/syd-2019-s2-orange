@@ -5,12 +5,11 @@ const FourOhFour = require('./pages/404Page/404Page');
 const DemoPage = require('./pages/demoPage/demoPage');
 const ReminderPage = require('./pages/reminderPage/reminderPage');
 
-
 module.exports = {
  '/': HomePage,
  'contacts': ContactsPage,
  'team': TeamPage,
  '404': FourOhFour,
  'demo': DemoPage,
- 'reminder': ReminderPage
+ 'reminder': ReminderPage,
 };
