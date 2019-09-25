@@ -5,7 +5,7 @@ class CategoryPage extends BasePage {
   template = require('./categoryPage.hbs');
 
   rightButtonEvent() {
-    this.navigate('quizListPage');
+    this.navigate('quizList');
   }
 
 }

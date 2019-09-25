@@ -18,7 +18,7 @@ describe('CategoryPage', () => {
       spyOn(page, 'navigate');
 
       page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('quizListPage');
+      expect(page.navigate).toHaveBeenCalledWith('quizList');
     });
   });
 
