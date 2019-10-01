@@ -3,12 +3,10 @@ const CategoryPage = require('./categoryPage');
 describe('CategoryPage', () => {
 
   describe('contents to appear once the page renders', () => {
-    it('should render 4 categories', () => {
+    it('should render 1 categories and a title', () => {
       const page = new CategoryPage();
-      expect(page.render()).toContain("<div> Science </div>");
-      expect(page.render()).toContain("<div> Technology </div>");
-      expect(page.render()).toContain("<div> Engineering </div>");
-      expect(page.render()).toContain("<div> Mathematics </div>");
+      expect(page.render()).toContain("<h1>Games</h1>");
+      expect(page.render()).toContain("<p> Science </p>");
     });
   });
 
@@ -22,4 +20,6 @@ describe('CategoryPage', () => {
     });
   });
 
-}); // describe CategoryPage
+
+
+});

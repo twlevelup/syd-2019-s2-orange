@@ -7,6 +7,8 @@ const ReminderPage = require('./pages/reminderPage/reminderPage');
 const CategoryPage = require('./pages/categoryPage/categoryPage');
 const QuizListPage = require('./pages/quizListPage/quizListPage');
 const RewardsPage = require('./pages/rewardsPage/rewardsPage');
+const CongratsPage = require('./pages/congratsPage/congratsPage')
+
 
 module.exports = {
  '/': HomePage,
@@ -17,5 +19,6 @@ module.exports = {
  'reminder': ReminderPage,
  'category': CategoryPage,
  'quizList': QuizListPage,
- 'rewards': RewardsPage
-};
+ 'rewards': RewardsPage,
+ 'congrats': CongratsPage,
+ };
