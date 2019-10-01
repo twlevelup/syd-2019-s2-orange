@@ -1,4 +1,5 @@
 const QuizListPage = require('./quizListPage');
+const CongratsPage = require('../congratsPage/congratsPage');
 
 describe('QuizListPage', () => {
 
@@ -12,6 +13,16 @@ describe('QuizListPage', () => {
       expect(page.render()).toContain('Jaguar');
 
 
+    });
+  });
+
+  describe('#rightButtonEvent', () => {
+    it('should go to congrats page', () => {
+      const page = new QuizListPage();
+      spyOn(page, 'navigate');
+
+      page.rightButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('congrats');
     });
   });
 
