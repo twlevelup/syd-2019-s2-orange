@@ -11,17 +11,16 @@ describe('ReminderPage', () => {
     it('should render my reminder page', () => {
       const page = new ReminderPage();
       page.generateFunFacts();
-      expect(page.render()).toContain("<h1>Interesting Fun Facts</h1>");
+      expect(page.render()).toContain('<h1>Interesting Fun Facts</h1>');
     });
     // it('should contain fun facts', () => {
     //   const page = new ReminderPage();
     //   expect(page.render()).toContain("Gravity was found by Newton");
     // });
-    // it('should contain fun facts', () => {
-    //     const page = new ReminderPage();
-    //     page.generateFunFacts();
-    //     expect(page.render()).toContain("ball");
-    //   });
+    it('should contain fun facts', () => {
+      const page = new ReminderPage();
+      page.generateFunFacts();
+      expect(page.render()).not.toContain('<p id="fact"></p>');
+    });
   });
-
 });

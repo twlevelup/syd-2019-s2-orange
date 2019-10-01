@@ -12,8 +12,8 @@ class HomePage extends BasePage {
     StorageHub.setData('contacts', [
       { name: 'Ray', phoneNumber: '0431 111 111' },
       { name: 'Sinan', phoneNumber: '0431 222 222' },
-      { name: 'Jafari', phoneNumber: '0431 333 333' },
-    ])
+      { name: 'Jafari', phoneNumber: '0431 333 333' }
+    ]);
 
     this.updateTimeEverySecond();
     const dateTime = this.getDateTime();
@@ -23,10 +23,10 @@ class HomePage extends BasePage {
   }
 
   getDateTime() {
-    const dateTime = new Date(Date.now()).toLocaleString('en-AU').split(",");
+    const dateTime = new Date(Date.now()).toLocaleString('en-AU').split(',');
     return {
       date: dateTime[0],
-      time: dateTime[1],
+      time: dateTime[1]
     };
   }
 
@@ -35,7 +35,7 @@ class HomePage extends BasePage {
   }
 
   updateTimeDisplay(getTime) {
-    const clockTime = document.getElementById("clock-time");
+    const clockTime = document.getElementById('clock-time');
     if (clockTime) {
       clockTime.textContent = getTime().time;
     }
@@ -60,6 +60,5 @@ class HomePage extends BasePage {
     this.navigate('reminder');
   }
 }
-
 
 module.exports = HomePage;

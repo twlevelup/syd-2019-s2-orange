@@ -3,42 +3,33 @@ class ReminderPage extends BasePage {
   template = require('./reminderPage.hbs');
 
   pageWillLoad() {
-
-    this.fact = this.generateFunFacts();
-
+    this.fact = 'ball';
   }
 
+  generateFunFacts() {
+    const arrayOfFacts = ['apple', 'ball', 'cat', 'dog'];
 
- generateFunFacts() {
-   const arrayOfFacts = ["apple", "ball", "cat", "dog"];
+    const randomIndex = Math.floor(Math.random() * arrayOfFacts.length);
 
-   const randomIndex = Math.floor(Math.random() * arrayOfFacts.length);
+    const randomFact = arrayOfFacts[randomIndex];
 
-   const randomFact = arrayOfFacts[1];
+    this.fact = randomFact;
+  }
 
-   const fact = document.getElementById("fact");
+  //  checkTime() {
 
-   if (fact) {
-     fact.textContent = randomFact;
-   }
-    //  this.fact = randomFact;
- }
+  //    const dateToday = new Date();
+  //    const currentHour = dateToday.getHours();
+  //    const currentMinutes = dateToday.getMinutes();
 
-//  checkTime() {
+  //    if(currentHour === 19 && currentMinutes === 25) {
+  //      this.generateFunFacts()
+  //    }
+  //  }
 
-//    const dateToday = new Date();
-//    const currentHour = dateToday.getHours();
-//    const currentMinutes = dateToday.getMinutes();
-
-//    if(currentHour === 19 && currentMinutes === 25) {
-//      this.generateFunFacts()
-//    }
-//  }
-
-//  updateTimeEveryMinute() {
-//     setInterval(() => this.checkTime, 60000);
-//   }
-
+  //  updateTimeEveryMinute() {
+  //     setInterval(() => this.checkTime, 60000);
+  //   }
 }
 
 module.exports = ReminderPage;
