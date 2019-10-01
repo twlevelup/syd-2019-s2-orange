@@ -8,15 +8,16 @@ describe('#getIndividualScores', () => {
 })
 
 describe('#getIndividualScores', () => {
-  it('should return 3 star', () => {
+  it('should return 1 star because 12pts are 4 trophys', () => {
     const page = new RewardsPage();
-    expect(page.getNumberOfStars(13)).toEqual(3);
+    expect(page.getNumberOfStars(13)).toEqual(1);
   })
 })
 
 describe('#getIndividualScores', () => {
-  it('should return 2 trophys', () => {
+  it('should return 4 trophys and final point is one star', () => {
     const page = new RewardsPage();
-    expect(page.getNumberOfTrophys(13)).toEqual(2);
+    expect(page.getNumberOfTrophys(13)).toEqual(4);
   })
 })
+

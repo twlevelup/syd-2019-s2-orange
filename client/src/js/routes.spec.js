@@ -9,5 +9,6 @@ describe('routes', () => {
     expect(routes['demo']).toBeDefined();
     expect(routes['category']).toBeDefined();
     expect(routes['quizList']).toBeDefined();
+    expect(routes['rewards']).toBeDefined();
   });
 });
