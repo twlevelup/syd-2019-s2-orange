@@ -20,7 +20,7 @@ describe('ReminderPage', () => {
     it('should contain fun facts', () => {
       const page = new ReminderPage();
       page.generateFunFacts();
-      expect(page.render()).not.toContain('<p id="fact"></p>');
+      expect(page.render()).not.toContain(`<p id="fact"></p>`);
     });
   });
 });
