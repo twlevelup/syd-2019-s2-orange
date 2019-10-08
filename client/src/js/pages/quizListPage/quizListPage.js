@@ -14,9 +14,13 @@ class QuizListPage extends BasePage {
   }
 
   highlightAnswer() {
-    const currentHighlightedElementID = document.getElementById('0');
-    // need to fine the ID of that element like 'A'
-    console.log('currentHighlightedElement', currentHighlightedElementID);
+    const currentHighlightedElement = document.querySelector(".selected-answer");
+    console.log('currentHighlightedElement', currentHighlightedElement);
+    // after finding the current highlighted element with the 'selected-answer' class
+    // need to get currentHighlightedElement's ID which is the string '0/1/2/3'
+    // then do the logic to decide the next ElementID should be currentID++;
+    // for upButtonEvent, similarly, currentID--;
+    // then add the 'selected-answer' class to the next <li> element to hightlight!
 
   }
 
