@@ -11,7 +11,7 @@ describe('ReminderPage', () => {
     it('should render my reminder page', () => {
       const page = new ReminderPage();
       page.generateFunFacts();
-      expect(page.render()).toContain('<h1>Interesting Fun Facts</h1>');
+      expect(page.render()).toContain('<h1>Fun Facts</h1>');
     });
     // it('should contain fun facts', () => {
     //   const page = new ReminderPage();

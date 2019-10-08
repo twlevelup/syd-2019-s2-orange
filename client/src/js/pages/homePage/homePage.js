@@ -57,7 +57,7 @@ class HomePage extends BasePage {
     this.watchFace.scrollTop += 40;
   }
   faceButtonEvent() {
-    this.navigate('reminder');
+    this.navigate('demo');
   }
 }
 
