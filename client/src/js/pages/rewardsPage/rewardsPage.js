@@ -9,6 +9,7 @@ class RewardsPage extends BasePage{
     this.trophy = trophy;
     this.starBlue = starBlue;
     this.starGrey = starGrey;
+    this.trophyNumber = this.getNumberOfTrophys();
   };
   getSTEMScores() {
     const scores = 25;
@@ -19,7 +20,8 @@ class RewardsPage extends BasePage{
   }
 
   getNumberOfTrophys(points) {
-    return Math.floor(points/3);
+    // return Math.floor(points/3);
+    return 4;
   }
 }
 
