@@ -7,6 +7,14 @@ class QuizListPage extends BasePage {
   rightButtonEvent() {
     this.navigate('congrats')
   }
+
+  downButtonEvent() {
+    this.highlightAnswer();
+  }
+
+  highlightAnswer() {
+
+  }
 }
 
 

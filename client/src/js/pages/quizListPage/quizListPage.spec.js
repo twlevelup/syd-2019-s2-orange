@@ -26,4 +26,14 @@ describe('QuizListPage', () => {
     });
   });
 
+  describe('#downBottonEvent', () => {
+    it('should highlight the next answer', () => {
+      const page = new QuizListPage();
+      spyOn(page, 'highlightAnswer');
+
+      page.downButtonEvent();
+      expect(page.highlightAnswer).toHaveBeenCalled();
+    });
+  });
+
 });
