@@ -27,13 +27,30 @@ describe('QuizListPage', () => {
   });
 
   describe('#downBottonEvent', () => {
-    it('should highlight the next answer', () => {
+    it('should call highlightAnswer', () => {
       const page = new QuizListPage();
       spyOn(page, 'highlightAnswer');
 
       page.downButtonEvent();
       expect(page.highlightAnswer).toHaveBeenCalled();
     });
+
+    it('should get highlighted answer', () => {
+      const page = new QuizListPage();
+document.body.innerHTML =
+`<ul style="list-style: none;"> 1. Which of these animals is not in the feline family?
+    <li id="0" class="selected-answer">A. Tiger</li>
+    <li id="1">B. Leopard</li>
+    <li id="2">C. Hyena</li>
+    <li id="3">D. Jaguar</li>
+</ul>`
+      const answer = page.highlightAnswer();
+      console.log('answer', answer)
+      // expect(A to be selected)
+
+
+
+    })
   });
 
 });
