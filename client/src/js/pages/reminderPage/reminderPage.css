@@ -1,0 +1,12 @@
+#fun {
+  text-align: center;
+  margin: 30px 25px 0 0;
+}
+
+#fun > h1 {
+  color: #EE5BA0;
+}
+
+#fun > p {
+  font-style: bold;
+}

@@ -35,7 +35,7 @@ class ReminderPage extends BasePage {
      const currentHour = dateToday.getHours();
      const currentMinutes = dateToday.getMinutes();
 
-     if (currentHour === 19 && currentMinutes === 25) {
+     if (currentHour === 16 && currentMinutes === 30) {
        this.generateFunFacts();
      }
    }
