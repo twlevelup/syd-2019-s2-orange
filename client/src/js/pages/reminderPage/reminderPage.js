@@ -6,6 +6,10 @@ class ReminderPage extends BasePage {
     this.updateTimeEveryMinute();
   }
 
+  leftButtonEvent() {
+    this.navigate('/');
+  }
+
   clearFact() {
     setTimeout( () => {
       const funFact = document.getElementById('fact');

@@ -20,4 +20,15 @@ describe('ReminderPage', () => {
       expect(page.render()).not.toContain(`<p id="fact"></p>`);
     });
   });
+
+  describe('#leftButtonEvent', () => {
+    it('goes to root page', () => {
+      const page = new ReminderPage();
+      spyOn(page, 'navigate');
+
+      page.leftButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('/');
+    });
+  });
+
 });

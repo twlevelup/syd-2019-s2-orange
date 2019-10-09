@@ -1,3 +1,13 @@
 #home {
   font-style: italic;
 }
+
+#home > button {
+  background-color: #EE5BA0;
+  margin-top: 1em;
+}
+
+ a {
+  color: #fff;
+  text-decoration: none;
+}
