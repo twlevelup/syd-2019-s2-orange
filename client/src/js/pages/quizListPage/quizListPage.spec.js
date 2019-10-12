@@ -11,8 +11,6 @@ describe('QuizListPage', () => {
       expect(page.render()).toContain('Leopard');
       expect(page.render()).toContain('Hyena');
       expect(page.render()).toContain('Jaguar');
-
-
     });
   });
 
@@ -26,31 +24,69 @@ describe('QuizListPage', () => {
     });
   });
 
-  describe('#downBottonEvent', () => {
+  describe('#bottomButtonEvent', () => {
     it('should call highlightAnswer', () => {
       const page = new QuizListPage();
       spyOn(page, 'highlightAnswer');
 
-      page.downButtonEvent();
+      page.bottomButtonEvent();
       expect(page.highlightAnswer).toHaveBeenCalled();
     });
 
-    it('should get highlighted answer', () => {
+    describe('#highlightAnswer', () => {
       document.body.innerHTML =
-      `<ul style="list-style: none;"> 1. Which of these animals is not in the feline family?
+        `<ul style="list-style: none;"> 1. Which of these animals is not in the feline family?
           <li id="0" class="selected-answer">A. Tiger</li>
           <li id="1">B. Leopard</li>
           <li id="2">C. Hyena</li>
           <li id="3">D. Jaguar</li>
-      </ul>`
-      const page = new QuizListPage();
-      const answer = page.highlightAnswer();
-      console.log('answer', answer)
-      // expect(answer to be '0', as by default '0' is always highlighted once page loads)
+        </ul>`;
 
+      // ############## get highlight element ##############
+      it('should first get the current highlighted answer which by default is answer A', ()=> {
+        const expectedDefaultHighlightedElement = document.getElementById("0");
 
+        const page = new QuizListPage();
+        const answer = page.getCurrentHighlightedElement();
+        expect(answer).toEqual(expectedDefaultHighlightedElement);
+      });
 
-    })
+      it('should get the next highlighted answer which by default is answer B', () => {
+        const expectedNextHighlightedElement = document.getElementById("1");
+
+        const page = new QuizListPage();
+        const nextAnswer = page.getNextHighlightedElement("0");
+        expect(nextAnswer).toEqual(expectedNextHighlightedElement);
+      });
+
+      it('should still get the highlighed answer D when already highlighed on D', () => {
+        const expectedNextHighlightedElement = document.getElementById("3");
+
+        const page = new QuizListPage();
+        const nextAnswer = page.getNextHighlightedElement("3");
+        expect(nextAnswer).toEqual(expectedNextHighlightedElement);
+      });
+
+      // ############## change backgroundColor ##############
+      it('should remove the highlight from the current highlighted answer', () => {
+        const page = new QuizListPage();
+        const currentHighlightedElement = page.getCurrentHighlightedElement();
+        // console.log('BEFORE: currentHighlightedElement.classList', currentHighlightedElement.classList);
+
+        page.removeHighlightFromCurrentElement(currentHighlightedElement);
+        // console.log('AFTER: currentHighlightedElement.classList', currentHighlightedElement.classList);
+        expect(currentHighlightedElement.classList).not.toContain("selected-answer");
+      });
+
+      it('should highlight the next element, which by default is answer B, in blue', () => {
+        const page = new QuizListPage();
+        const nextAnswer = page.getNextHighlightedElement("0");
+        // console.log('BEFORE: nextAnswer.classList', nextAnswer.classList);
+
+        page.addHighlightToNextElement(nextAnswer);
+        // console.log('AFTER: nextAnswer.classList', nextAnswer.classList);
+        expect(nextAnswer.classList).toContain("selected-answer");
+      });
+    });
   });
-
 });
