@@ -1,10 +1,10 @@
-const CongratsPage = require('./congratsPage');
+const QuizResult = require('./quizResultPage');
 
-describe('CongratsPage', () => {
+describe('QuizResultPage', () => {
 
   describe('contents to appear once the page renders', () => {
     it('should render congratulations', () => {
-      const page = new CongratsPage();
+      const page = new QuizResult();
       expect(page.render()).toContain("<h1>Congratulations!</h1>");
     });
   });
