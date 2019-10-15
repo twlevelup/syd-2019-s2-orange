@@ -4,7 +4,7 @@ class QuizListPage extends BasePage {
   template = require('./quizListPage.hbs');
 
   rightButtonEvent() {
-    this.navigate('congrats')
+    this.navigate('quizResult')
   }
 
   bottomButtonEvent() {

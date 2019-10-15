@@ -17,7 +17,13 @@ describe('#getIndividualScores', () => {
 describe('#getIndividualScores', () => {
   it('should return 4 trophys and final point is one star', () => {
     const page = new RewardsPage();
-    expect(page.getNumberOfTrophys(13)).toEqual(4);
+    expect(page.getNumberOfTrophys()).toEqual(8);
   })
 })
 
+describe('#makeSureFuncIsTalkingToStorage', () => {
+  it('should return 25', () => {
+    const page = new RewardsPage();
+    expect(page.getSTEMScores()).toEqual(25);
+  })
+});

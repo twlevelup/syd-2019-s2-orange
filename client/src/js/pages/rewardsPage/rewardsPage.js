@@ -1,4 +1,5 @@
 const BasePage = require('watch-framework').BasePage;
+const StorageHub = require('watch-framework').StorageHub;
 const starBlue = require('../../../images/star-blue.png');
 const starGrey = require('../../../images/star-grey.png');
 const trophy = require('../../../images/trophy.png');
@@ -10,18 +11,22 @@ class RewardsPage extends BasePage{
     this.starBlue = starBlue;
     this.starGrey = starGrey;
     this.trophyNumber = this.getNumberOfTrophys();
+    this.stars = this.getNumberOfStars();
   };
+
   getSTEMScores() {
-    const scores = 25;
+    let score = 25;
+    return score;
   }
 
-  getNumberOfStars(points) {
-    return points%3;
+  getNumberOfStars() {
+     let stars = this.getSTEMScores();
+    return stars%3;
   }
 
-  getNumberOfTrophys(points) {
-    // return Math.floor(points/3);
-    return 4;
+  getNumberOfTrophys() {
+    let trophies = this.getSTEMScores();
+    return Math.floor(trophies/3);
   }
 }
 
