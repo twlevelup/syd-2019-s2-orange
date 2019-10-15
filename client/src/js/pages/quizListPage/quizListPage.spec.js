@@ -1,5 +1,6 @@
 const QuizListPage = require('./quizListPage');
 const CongratsPage = require('../quizResultPage/quizResultPage');
+const StorageHub = require('watch-framework').StorageHub;
 
 describe('QuizListPage', () => {
 
@@ -22,6 +23,39 @@ describe('QuizListPage', () => {
       page.rightButtonEvent();
       expect(page.navigate).toHaveBeenCalledWith('quizResult');
     });
+
+    it('stores true when correct answer is selected', () => {
+      spyOn(StorageHub, 'setData');
+      const page = new QuizListPage();
+      spyOn(page, 'navigate');
+      // let eleId = page.getCurrentHighlightedElement().getAttribute("id");
+      // console.log('eleId', eleId);
+
+      page.bottomButtonEvent();
+      page.bottomButtonEvent();
+      // eleId = page.getCurrentHighlightedElement().getAttribute("id");
+      // console.log('eleId', eleId);
+
+      page.rightButtonEvent();
+      expect(StorageHub.setData).toBeCalledTimes(1);
+      expect(StorageHub.setData).toBeCalledWith('quizResult', true);
+    });
+
+    it('stores false when incorrect answer is selected', () => {
+      spyOn(StorageHub, 'setData');
+      const page = new QuizListPage();
+      spyOn(page, 'navigate');
+      // let eleId = page.getCurrentHighlightedElement().getAttribute("id");
+      // console.log('eleId', eleId);
+
+      page.bottomButtonEvent();
+      // eleId = page.getCurrentHighlightedElement().getAttribute("id");
+      // console.log('eleId', eleId);
+
+      page.rightButtonEvent();
+      expect(StorageHub.setData).toBeCalledTimes(1);
+      expect(StorageHub.setData).toBeCalledWith('quizResult', false);
+    });
   });
 
   describe('#bottomButtonEvent', () => {
@@ -43,15 +77,14 @@ describe('QuizListPage', () => {
         </ul>`;
 
       // ############## get highlight element ##############
-      it('should first get the current highlighted answer which by default is answer A', ()=> {
-        const expectedDefaultHighlightedElement = document.getElementById("0");
-
+      it('should get the current highlighted answer', () => {
         const page = new QuizListPage();
         const answer = page.getCurrentHighlightedElement();
-        expect(answer).toEqual(expectedDefaultHighlightedElement);
+        // console.log('answer', answer);
+        expect(answer.classList).toContain("selected-answer");
       });
 
-      it('should get the next highlighted answer which by default is answer B', () => {
+      it('should get the next highlighted answer', () => {
         const expectedNextHighlightedElement = document.getElementById("1");
 
         const page = new QuizListPage();

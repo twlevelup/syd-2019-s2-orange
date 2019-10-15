@@ -1,10 +1,23 @@
 const BasePage = require('watch-framework').BasePage;
+const StorageHub = require('watch-framework').StorageHub;
+
 
 class QuizListPage extends BasePage {
   template = require('./quizListPage.hbs');
 
   rightButtonEvent() {
-    this.navigate('quizResult')
+    // 1, get current element
+    const currentHighlightedElement = this.getCurrentHighlightedElement();
+    // 2, get id from current element
+    const currentHighlightedElementId = currentHighlightedElement.getAttribute("id");
+    // 3, check id and store storage
+    if (currentHighlightedElementId === "2"){
+      StorageHub.setData('quizResult', true);
+    } else {
+      StorageHub.setData('quizResult', false);
+    }
+    // 4, navigate to the next quizResult page
+    this.navigate('quizResult');
   }
 
   bottomButtonEvent() {
