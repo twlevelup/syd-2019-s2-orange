@@ -1,5 +1,5 @@
 const QuizListPage = require('./quizListPage');
-const CongratsPage = require('../congratsPage/congratsPage');
+const CongratsPage = require('../quizResultPage/quizResultPage');
 
 describe('QuizListPage', () => {
 
@@ -15,12 +15,12 @@ describe('QuizListPage', () => {
   });
 
   describe('#rightButtonEvent', () => {
-    it('should go to congrats page', () => {
+    it('should go to quizResult page', () => {
       const page = new QuizListPage();
       spyOn(page, 'navigate');
 
       page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('congrats');
+      expect(page.navigate).toHaveBeenCalledWith('quizResult');
     });
   });
 
@@ -89,4 +89,7 @@ describe('QuizListPage', () => {
       });
     });
   });
+
+
+
 });
