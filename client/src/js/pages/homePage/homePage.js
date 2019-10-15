@@ -20,6 +20,8 @@ class HomePage extends BasePage {
     this.date = dateTime.date;
     this.time = dateTime.time;
     this.logo = logo;
+
+    this.checkReminderTime();
   }
 
   getDateTime() {
@@ -59,6 +61,20 @@ class HomePage extends BasePage {
   faceButtonEvent() {
     this.navigate('demo');
   }
+
+  checkTime() {
+    const dateToday = new Date();
+    const currentHour = dateToday.getHours();
+    const currentMinutes = dateToday.getMinutes();
+
+    if (currentHour === 16 && currentMinutes === 30) {
+    this.navigate('reminder');
+    }
+  }
+
+   checkReminderTime() {
+      setInterval(() => this.checkTime(), 55000);
+    }
 }
 
 module.exports = HomePage;
