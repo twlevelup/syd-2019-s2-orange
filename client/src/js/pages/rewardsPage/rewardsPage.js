@@ -16,8 +16,7 @@ class RewardsPage extends BasePage{
   };
 
   getSTEMScores() {
-    let score = 25;
-    return score;
+    return StorageHub.getData('STEM')
   }
 
   getNumberOfStars() {
