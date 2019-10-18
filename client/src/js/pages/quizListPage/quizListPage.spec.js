@@ -15,6 +15,17 @@ describe('QuizListPage', () => {
     });
   });
 
+  describe('#leftButtonEvent', () => {
+    it('should go to category page', () => {
+      const page = new QuizListPage();
+      spyOn(page, 'navigate');
+
+      page.leftButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('category');
+    });
+
+  });
+
   describe('#rightButtonEvent', () => {
     it('should go to quizResult page', () => {
       const page = new QuizListPage();

@@ -16,6 +16,10 @@ class QuizListPage extends BasePage {
     this.navigate('quizResult');
   }
 
+  leftButtonEvent() {
+    this.navigate('category');
+  }
+
   bottomButtonEvent() {
     // console.log('called downButtonEvent')
     this.highlightAnswer();
