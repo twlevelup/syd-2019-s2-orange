@@ -2,9 +2,15 @@
   font-style: italic;
 }
 
+#watch-face{
+  padding: 0;
+}
+
 #home > button {
   background-color: #EE5BA0;
-  margin-top: 1em;
+  margin: 5% 5% 5% 10%;
+  width: 100%;
+
 }
 
  a {

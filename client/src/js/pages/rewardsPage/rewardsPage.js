@@ -12,6 +12,7 @@ class RewardsPage extends BasePage{
     this.starGrey = starGrey;
     this.trophyNumber = this.getNumberOfTrophys();
     this.stars = this.getNumberOfStars();
+    // printStars();
   };
 
   getSTEMScores() {
@@ -28,6 +29,18 @@ class RewardsPage extends BasePage{
     let trophies = this.getSTEMScores();
     return Math.floor(trophies/3);
   }
+
+  // printStars() {
+  // var blueStarsDiv = document.querySelector("#stars");
+  // for(let i = 0; i < this.stars; i++ ){
+  //   var blStars = document.createElement("div");
+  //   blStars.setAttribute("src", starBlue);
+  //   blStars.style.height = "50px";
+  //   blStars.style.width = "50px";
+  //   blueStarsDiv.appendChild(blStars);
+  // }
+  // }
+
 }
 
 

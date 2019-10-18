@@ -18,12 +18,6 @@ describe('HomePage', () => {
     })
   })
 
-  describe('#render', () => {
-    it('should render my page correctly', () => {
-      const page = new HomePage();
-      expect(page.render()).toContain("<div>Hello, World!</div>");
-    });
-  });
 
   describe('#leftButtonEvent', () => {
     it('audioHub plays a sound', () => {
@@ -59,13 +53,13 @@ describe('HomePage', () => {
   });
 
   describe('#bottomButtonEvent', () => {
-    it('scrolls page down', () => {
+    it('go to rewards page', () => {
 
-      const page = new HomePage({ watchFace });
+      const page = new HomePage();
+      spyOn(page, 'navigate');
 
       page.bottomButtonEvent();
-
-      expect(watchFace.scrollTop).toEqual(40);
+      expect(page.navigate).toHaveBeenCalledWith('rewards');
 
     });
   });
@@ -80,39 +74,39 @@ describe('HomePage', () => {
     });
   });
 
-  describe('#updateTimeDisplay', () => {
-    it('updateTimeDisplays calls clock-time if its in the window', () => {
-      const page = new HomePage();
+  // describe('#updateTimeDisplay', () => {
+  //   it('updateTimeDisplays calls clock-time if its in the window', () => {
+  //     const page = new HomePage();
 
-      watchFace.innerHTML = page.render();
+  //     watchFace.innerHTML = page.render();
 
-      jest.spyOn(page,"getDateTime");
-      page.updateTimeDisplay(page.getDateTime);
-      expect(page.getDateTime).toHaveBeenCalledTimes(1);
-    });
-  });
+  //     jest.spyOn(page,"getDateTime");
+  //     page.updateTimeDisplay(page.getDateTime);
+  //     expect(page.getDateTime).toHaveBeenCalledTimes(1);
+  //   });
+  // });
 
-  describe('#updateTimeDisplay', () => {
-    it('updateTimeDisplays does not call clock-time if its not in the window', () => {
-      const page = new HomePage();
+  // describe('#updateTimeDisplay', () => {
+  //   it('updateTimeDisplays does not call clock-time if its not in the window', () => {
+  //     const page = new HomePage();
 
-      jest.spyOn(page,"getDateTime");
-      page.updateTimeDisplay(page.getDateTime);
-      expect(page.getDateTime).toHaveBeenCalledTimes(0);
-    });
-  });
+  //     jest.spyOn(page,"getDateTime");
+  //     page.updateTimeDisplay(page.getDateTime);
+  //     expect(page.getDateTime).toHaveBeenCalledTimes(0);
+  //   });
+  // });
 
-  describe('#updateTimeEverySecond', () => {
-    it('update time display gets called three times in 3000 ms', () => {
-      const page = new HomePage();
+  // describe('#updateTimeEverySecond', () => {
+  //   it('update time display gets called three times in 3000 ms', () => {
+  //     const page = new HomePage();
 
-      spyOn(page, 'updateTimeDisplay');
+  //     spyOn(page, 'updateTimeDisplay');
 
-      jest.useFakeTimers();
-      page.updateTimeEverySecond();
-      jest.runTimersToTime(3000);
+  //     jest.useFakeTimers();
+  //     page.updateTimeEverySecond();
+  //     jest.runTimersToTime(3000);
 
-      expect(page.updateTimeDisplay).toHaveBeenCalledTimes(3);
-    });
-  });
+  //     expect(page.updateTimeDisplay).toHaveBeenCalledTimes(3);
+  //   });
+  // });
 });
