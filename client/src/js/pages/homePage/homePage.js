@@ -67,7 +67,7 @@ class HomePage extends BasePage {
     const currentHour = dateToday.getHours();
     const currentMinutes = dateToday.getMinutes();
 
-    if (currentHour === 16 && currentMinutes === 30) {
+    if (currentHour === 10 && currentMinutes === 59) {
     this.navigate('reminder');
     }
   }

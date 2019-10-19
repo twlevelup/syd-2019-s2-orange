@@ -109,4 +109,19 @@ describe('HomePage', () => {
   //     expect(page.updateTimeDisplay).toHaveBeenCalledTimes(3);
   //   });
   // });
+  //     expect(page.updateTimeDisplay).toHaveBeenCalledTimes(3);
+  //   });
+  // });
+
+    describe('#reminderEvent', () => {
+  it('should take the user to the reminder page', () => {
+
+    const page = new HomePage();
+    spyOn(page, 'checkReminderTime');
+
+    page.pageWillLoad();
+    expect(page.checkReminderTime).toHaveBeenCalled();
+  });
+});
+
 });
