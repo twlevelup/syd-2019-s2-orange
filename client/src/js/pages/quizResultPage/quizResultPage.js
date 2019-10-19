@@ -3,7 +3,6 @@ const StorageHub = require('watch-framework').StorageHub;
 
 
 class QuizResultPage extends BasePage {
-
   template = require('./quizResultPage.hbs');
 
   pageWillLoad() {

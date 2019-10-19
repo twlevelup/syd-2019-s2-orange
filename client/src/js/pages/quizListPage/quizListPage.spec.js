@@ -27,6 +27,14 @@ describe('QuizListPage', () => {
   });
 
   describe('#rightButtonEvent', () => {
+    beforeEach(() => {
+      StorageHub.setData('STEM', 0);
+    });
+
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
     it('should go to quizResult page', () => {
       const page = new QuizListPage();
       spyOn(page, 'navigate');
@@ -35,33 +43,36 @@ describe('QuizListPage', () => {
       expect(page.navigate).toHaveBeenCalledWith('quizResult');
     });
 
-    it('stores true when correct answer is selected', () => {
-      spyOn(StorageHub, 'setData');
-      const page = new QuizListPage();
-      spyOn(page, 'navigate');
-      // let eleId = page.getCurrentHighlightedElement().getAttribute("id");
-      // console.log('eleId', eleId);
+    describe('selects correct answer', () => {
+      const initialValue = 1;
+      let setDataMockArgs;
+      beforeAll(() => {
+        StorageHub.setData('STEM', initialValue);
+        spyOn(StorageHub, 'setData');
+        const page = new QuizListPage();
+        spyOn(page, 'navigate');
 
-      page.bottomButtonEvent();
-      page.bottomButtonEvent();
-      // eleId = page.getCurrentHighlightedElement().getAttribute("id");
-      // console.log('eleId', eleId);
+        page.bottomButtonEvent();
+        page.bottomButtonEvent();
 
-      page.rightButtonEvent();
-      expect(StorageHub.setData).toBeCalledTimes(1);
-      expect(StorageHub.setData).toBeCalledWith('quizResult', true);
+        page.rightButtonEvent();
+      });
+
+      it('stores true when correct answer is selected', () => {
+        expect(StorageHub.setData).toHaveBeenNthCalledWith(1, 'quizResult', true);
+      });
+
+      it('increments the store result by one when correct answer is selected', () => {
+        expect(StorageHub.setData).toHaveBeenNthCalledWith(2, 'STEM', initialValue + 1);
+      });
     });
 
     it('stores false when incorrect answer is selected', () => {
       spyOn(StorageHub, 'setData');
       const page = new QuizListPage();
       spyOn(page, 'navigate');
-      // let eleId = page.getCurrentHighlightedElement().getAttribute("id");
-      // console.log('eleId', eleId);
 
       page.bottomButtonEvent();
-      // eleId = page.getCurrentHighlightedElement().getAttribute("id");
-      // console.log('eleId', eleId);
 
       page.rightButtonEvent();
       expect(StorageHub.setData).toBeCalledTimes(1);

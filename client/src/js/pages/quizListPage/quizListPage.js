@@ -10,6 +10,9 @@ class QuizListPage extends BasePage {
     const currentHighlightedElementId = currentHighlightedElement.getAttribute("id");
     if (currentHighlightedElementId === "2"){
       StorageHub.setData('quizResult', true);
+
+      const currentScore = StorageHub.getData('STEM');
+      StorageHub.setData('STEM', currentScore + 1);
     } else {
       StorageHub.setData('quizResult', false);
     }
