@@ -27,6 +27,18 @@ h1, p {
 
 </style>
 
+<script>
+    var blueStarsDiv = document.querySelector("#stars");
+    for(let i = 0; i < this.stars; i++ ){
+        var blStars = document.createElement("div");
+        blStars.setAttribute("src", starBlue);
+        blStars.style.height = "50px";
+        blStars.style.width = "50px";
+        blueStarsDiv.appendChild(blStars);
+    }
+
+</script>
+
 <div id="home">
 
 
