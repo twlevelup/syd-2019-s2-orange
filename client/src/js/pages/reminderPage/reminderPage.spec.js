@@ -1,4 +1,6 @@
 const ReminderPage = require('./reminderPage');
+const AudioHub = require('watch-framework').AudioHub;
+const plop = './sounds/plop.mp3';
 
 describe('ReminderPage', () => {
   let watchFace;
