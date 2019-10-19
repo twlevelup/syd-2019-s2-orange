@@ -1,12 +1,25 @@
 #fun {
   text-align: center;
-  margin: 0 auto;
+  background: linear-gradient(
+    to right bottom,
+    #1463EE,
+    #79F2F6 );
+  border-radius: 10px;
+  width: 90%;
+  margin-left: 20px;
+  min-height: 22vh;
 }
 
 #fun > h1 {
-  color: #EE5BA0;
+  color: white;
+  padding: 5px;
+  font-weight: 800;
+
 }
 
 #fun > p {
   font-style: bold;
+   padding: 5px;
 }
+
+
