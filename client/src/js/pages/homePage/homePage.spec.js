@@ -18,16 +18,6 @@ describe('HomePage', () => {
     })
   })
 
-
-  describe('#leftButtonEvent', () => {
-    it('audioHub plays a sound', () => {
-      spyOn(AudioHub, 'playSound')
-      const page = new HomePage();
-      page.leftButtonEvent();
-      expect(AudioHub.playSound).toBeCalledWith('./sounds/plop.mp3');
-    });
-  });
-
   describe('#faceButtonEvent', () => {
   it('should take the user to the home page', () => {
     const props = {
@@ -41,16 +31,6 @@ describe('HomePage', () => {
     expect(page.navigate).toHaveBeenCalledWith('/');
   });
 });
-
-  describe('#rightButtonEvent', () => {
-    it('goes to contacts page', () => {
-      const page = new HomePage();
-      spyOn(page, 'navigate');
-
-      page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('contacts');
-    });
-  });
 
   describe('#bottomButtonEvent', () => {
     it('go to rewards page', () => {

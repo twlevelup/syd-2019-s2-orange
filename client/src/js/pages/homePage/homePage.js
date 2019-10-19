@@ -3,6 +3,7 @@ const StorageHub = require('watch-framework').StorageHub;
 const AudioHub = require('watch-framework').AudioHub;
 const logo = require('../../../images/logo.png');
 const plop = './sounds/plop.mp3';
+const notification = './sounds/notification_sound.wav';
 
 //test for raspberrypi
 class HomePage extends BasePage {
@@ -43,14 +44,6 @@ class HomePage extends BasePage {
     }
   }
 
-  rightButtonEvent() {
-    this.navigate('contacts');
-  }
-
-  leftButtonEvent() {
-    AudioHub.playSound(plop);
-  }
-
   topButtonEvent() {
     this.navigate('category')
   }
@@ -68,7 +61,7 @@ class HomePage extends BasePage {
     const currentMinutes = dateToday.getMinutes();
 
     if (currentHour === 16 && currentMinutes === 30) {
-      AudioHub.playSound(plop);
+      AudioHub.playSound(notification);
       this.navigate('reminder');
     }
   }
