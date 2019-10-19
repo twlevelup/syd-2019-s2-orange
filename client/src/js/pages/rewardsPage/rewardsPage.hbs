@@ -1,10 +1,27 @@
 <style>
+#home {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+
+    #stars {
+        font-size: 1.5em;
+    }
+    #trophy {
+        display:flex;
+        justify-content:center;
+    }
     #trophy > h1 {
         position: absolute;
-        left: 25%;
-        top: 55%;
+        top: 62.5%;
         display: inline-block;
+
     }
+
 </style>
 
 <div id="home">
@@ -20,7 +37,7 @@
   </div>
   <br>
   <div id = "trophy">
-     <img src="{{trophy}}" width="70" height="70" alt="" />
+     <img src="{{trophy}}" width="80" height="70" alt="" />
      <h1> {{trophyNumber}} </h1>
   </div>
 

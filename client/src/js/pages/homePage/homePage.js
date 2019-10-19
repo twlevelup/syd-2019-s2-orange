@@ -59,7 +59,7 @@ class HomePage extends BasePage {
     this.navigate('rewards');
   }
   faceButtonEvent() {
-    this.navigate('demo');
+    this.navigate('/');
   }
 
   checkTime() {

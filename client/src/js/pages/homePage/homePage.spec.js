@@ -29,7 +29,7 @@ describe('HomePage', () => {
   });
 
   describe('#faceButtonEvent', () => {
-  it('should take the user to the demo page', () => {
+  it('should take the user to the home page', () => {
     const props = {
       navigate: () => { },
     };
@@ -38,7 +38,7 @@ describe('HomePage', () => {
     spyOn(page, 'navigate');
 
     page.faceButtonEvent();
-    expect(page.navigate).toHaveBeenCalledWith('demo');
+    expect(page.navigate).toHaveBeenCalledWith('/');
   });
 });
 

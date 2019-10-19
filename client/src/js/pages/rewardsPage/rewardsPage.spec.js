@@ -1,5 +1,7 @@
 const RewardsPage = require('./rewardsPage');
 const StorageHub = require('watch-framework').StorageHub;
+const HomePage = require('./../homePage/homePage');
+
 
 describe('#getIndividualScores', () => {
   it('should return 1 star/pt', () => {
@@ -35,4 +37,15 @@ describe('#makeSureFuncIsTalkingToStorage', () => {
     StorageHub.setData('STEM', score )
     expect(page.getSTEMScores()).toEqual(25);
   })
+});
+
+describe('#faceButtonEvent', () => {
+  it('should take the user to the home page', () => {
+
+    const page = new HomePage();
+    spyOn(page, 'navigate');
+
+    page.faceButtonEvent();
+    expect(page.navigate).toHaveBeenCalledWith('/');
+  });
 });

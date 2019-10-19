@@ -29,6 +29,10 @@ class RewardsPage extends BasePage{
     return Math.floor(trophies/3);
   }
 
+   faceButtonEvent() {
+   this.navigate('/');
+  }
+
   // printStars() {
   // var blueStarsDiv = document.querySelector("#stars");
   // for(let i = 0; i < this.stars; i++ ){
