@@ -9,9 +9,9 @@ class QuizResultPage extends BasePage {
   pageWillLoad() {
     const result = StorageHub.getData('quizResult');
 
-    this.message = 'Congratulations!';
-    if (result === false) {
-      this.message = 'Better luck next time!';
+    this.message = 'Better luck next time!';
+    if (result === true) {
+      this.message = 'Congratulations!';
     }
   }
 }
