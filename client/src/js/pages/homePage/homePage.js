@@ -44,6 +44,11 @@ class HomePage extends BasePage {
     }
   }
 
+  rightButtonEvent() {
+    this.navigate('screensaver');
+  }
+
+
   topButtonEvent() {
     this.navigate('category')
   }
@@ -70,5 +75,22 @@ class HomePage extends BasePage {
       setInterval(() => this.checkTime(), 55000);
     }
 }
+
+//  var inactivityTime = function () {
+//     var time;
+//     window.onload = resetTimer;
+//     document.onkeypress = resetTimer;
+
+//   function screenSaver() {
+//     document.addEventListener('click', resetTimer, true);
+//      this.navigate('screensaver');
+//   }
+
+//   function resetTimer() {
+//       clearTimeout(time);
+//       time = setTimeout(screenSaver, 2000)
+//       // 1000 milliseconds = 1 second
+//   }
+// };
 
 module.exports = HomePage;

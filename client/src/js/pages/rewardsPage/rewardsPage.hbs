@@ -1,14 +1,14 @@
 <style>
-h1, p {
-    color: black;
-}
-#home {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
+    h1, p {
+        color: black;
+    }
+    #home {
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
 
-}
+    }
 
 
     #stars {
@@ -18,9 +18,9 @@ h1, p {
         display:flex;
         justify-content:center;
     }
-    #trophy > h1 {
+    #trophyNum {
         position: absolute;
-        top: 62.5%;
+        top: 65.5%;
         display: inline-block;
 
     }
@@ -41,7 +41,7 @@ h1, p {
   <br>
   <div id = "trophy">
      <img src="{{trophy}}" width="80" height="70" alt="" />
-     <h1> {{trophyNumber}} </h1>
+     <h1 id="trophyNum"> {{trophyNumber}} </h1>
   </div>
 
  </div>

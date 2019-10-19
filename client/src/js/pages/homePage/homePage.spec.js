@@ -1,6 +1,7 @@
 const HomePage = require('./homePage');
 const StorageHub = require('watch-framework').StorageHub;
 const AudioHub = require('watch-framework').AudioHub;
+const ScreensaverPage = require('../screensaverPage/screensaverPage');
 
 describe('HomePage', () => {
   let watchFace;
@@ -9,14 +10,15 @@ describe('HomePage', () => {
     watchFace = document.getElementById('watch-face');
   });
 
-  describe('#pageWillLoad', () => {
-    it('should set contacts data on page load', () => {
-      spyOn(StorageHub, 'setData')
+ describe('#rightButtonEvent', () => {
+    it('should go to screensaver page', () => {
       const page = new HomePage();
-      page.pageWillLoad();
-      expect(StorageHub.setData).toBeCalledWith('contacts', expect.any(Array));
-    })
-  })
+      spyOn(page, 'navigate');
+
+      page.rightButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('screensaver');
+    });
+  });
 
   describe('#faceButtonEvent', () => {
   it('should take the user to the home page', () => {
@@ -31,6 +33,7 @@ describe('HomePage', () => {
     expect(page.navigate).toHaveBeenCalledWith('/');
   });
 });
+
 
   describe('#bottomButtonEvent', () => {
     it('go to rewards page', () => {
