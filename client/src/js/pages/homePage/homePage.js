@@ -52,7 +52,7 @@ class HomePage extends BasePage {
   }
 
   topButtonEvent() {
-    this.watchFace.scrollTop -= 40;
+    this.navigate('category')
   }
 
   bottomButtonEvent() {
@@ -67,7 +67,7 @@ class HomePage extends BasePage {
     const currentHour = dateToday.getHours();
     const currentMinutes = dateToday.getMinutes();
 
-    if (currentHour === 10 && currentMinutes === 59) {
+    if (currentHour === 16 && currentMinutes === 30) {
     this.navigate('reminder');
     }
   }

@@ -6,7 +6,7 @@ describe('CategoryPage', () => {
     it('should render 1 categories and a title', () => {
       const page = new CategoryPage();
       expect(page.render()).toContain("<h1>Games</h1>");
-      expect(page.render()).toContain("<p> Science </p>");
+      expect(page.render()).toContain("<button> Science </button>");
     });
   });
 

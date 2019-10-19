@@ -65,12 +65,14 @@ describe('HomePage', () => {
   });
 
   describe('#topButtonEvent', () => {
-    it('scrolls page up', () => {
-      const page = new HomePage({ watchFace });
+    it('go to category page', () => {
+
+      const page = new HomePage();
+      spyOn(page, 'navigate');
 
       page.topButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('category');
 
-      expect(watchFace.scrollTop).toEqual(-40);
     });
   });
 
@@ -109,33 +111,4 @@ describe('HomePage', () => {
   //     expect(page.updateTimeDisplay).toHaveBeenCalledTimes(3);
   //   });
   // });
-  //     expect(page.updateTimeDisplay).toHaveBeenCalledTimes(3);
-  //   });
-  // });
-
-    describe('#reminderEvent', () => {
-  it('should take the user to the reminder page', () => {
-
-    const page = new HomePage();
-    spyOn(page, 'checkReminderTime');
-
-    page.pageWillLoad();
-    expect(page.checkReminderTime).toHaveBeenCalled();
-  });
-});
-
-  describe('#checkForReminderEveryMinute', () => {
-    it('update time display gets called three times in 180000 ms', () => {
-      const page = new HomePage();
-
-      spyOn(page, 'checkTime');
-
-      jest.useFakeTimers();
-      page.checkReminderTime();
-      jest.runTimersToTime(180000);
-
-      expect(page.checkTime).toHaveBeenCalledTimes(3);
-    });
-  });
-
 });

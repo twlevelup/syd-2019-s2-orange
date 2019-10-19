@@ -1,15 +1,30 @@
-#home {
-  font-style: italic;
-}
 
+#home {
+  width: 260px;
+  font-style: italic;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+}
+#watch {
+    background-color: white;
+
+}
 #watch-face{
   padding: 0;
 }
 
 #home > button {
-  background-color: #EE5BA0;
-  margin: 5% 5% 5% 10%;
-  width: 100%;
+  background-image: linear-gradient(#79F2F6, #1463EE);
+  margin: 5%;
+  width: 80%;
+  font-size: 1.5em;
+  border-radius: 25px;
+    justify-content: space-around;
+    box-shadow:  -5px -2.5px 10px #888888 ;
 
 }
 
