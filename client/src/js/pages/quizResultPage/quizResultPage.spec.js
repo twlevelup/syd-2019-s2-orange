@@ -19,4 +19,14 @@ describe('QuizResultPage', () => {
       expect(page.render()).toContain("<h1>Better luck next time!</h1>");
     });
   });
+
+  describe('#faceButtonEvent',() => {
+    it('should go to Home page', () => {
+      const page = new QuizResult();
+      spyOn(page, 'navigate');
+
+      page.faceButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('/');
+    });
+  });
 });

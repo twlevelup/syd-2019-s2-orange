@@ -16,6 +16,10 @@ class QuizResultPage extends BasePage {
       this.message = 'Congratulations!';
     }
   }
+
+  faceButtonEvent() {
+    this.navigate('/');
+  }
 }
 
 module.exports = QuizResultPage;
