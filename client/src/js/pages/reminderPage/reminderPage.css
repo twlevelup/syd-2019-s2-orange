@@ -7,19 +7,20 @@
   border-radius: 10px;
   width: 90%;
   margin-left: 20px;
-  min-height: 22vh;
+  height: 200px;
 }
 
 #fun > h1 {
   color: white;
-  padding: 5px;
+  padding: 10px 5px 5px 5px;
   font-weight: 800;
 
 }
 
 #fun > p {
-  font-style: bold;
-   padding: 5px;
+  font-weight: 800;
+  padding: 5px 10px 10px 10px;
+  font-size: 14px;
 }
 
 
