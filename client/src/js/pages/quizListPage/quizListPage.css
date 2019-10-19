@@ -1,4 +1,13 @@
 .selected-answer {
-  background-color: blue;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  color: black;
+}
+
+li {
+  color: lightgrey;
 }
 

@@ -45,7 +45,6 @@ describe('QuizListPage', () => {
 
     describe('selects correct answer', () => {
       const initialValue = 1;
-      let setDataMockArgs;
       beforeAll(() => {
         StorageHub.setData('STEM', initialValue);
         spyOn(StorageHub, 'setData');
