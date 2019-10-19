@@ -124,4 +124,18 @@ describe('HomePage', () => {
   });
 });
 
+  describe('#checkForReminderEveryMinute', () => {
+    it('update time display gets called three times in 180000 ms', () => {
+      const page = new HomePage();
+
+      spyOn(page, 'checkTime');
+
+      jest.useFakeTimers();
+      page.checkReminderTime();
+      jest.runTimersToTime(180000);
+
+      expect(page.checkTime).toHaveBeenCalledTimes(3);
+    });
+  });
+
 });
