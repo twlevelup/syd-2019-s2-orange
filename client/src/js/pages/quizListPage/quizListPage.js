@@ -24,7 +24,6 @@ class QuizListPage extends BasePage {
   }
 
   bottomButtonEvent() {
-    // console.log('called downButtonEvent')
     this.highlightAnswer();
   }
 
