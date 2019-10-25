@@ -48,9 +48,8 @@ class HomePage extends BasePage {
     this.navigate('screensaver');
   }
 
-
   topButtonEvent() {
-    this.navigate('category')
+    this.navigate('category');
   }
 
   bottomButtonEvent() {
@@ -65,15 +64,15 @@ class HomePage extends BasePage {
     const currentHour = dateToday.getHours();
     const currentMinutes = dateToday.getMinutes();
 
-    if (currentHour === 16 && currentMinutes === 30) {
+    if (currentHour === 15 && currentMinutes === 30) {
       AudioHub.playSound(notification);
       this.navigate('reminder');
     }
   }
 
-   checkReminderTime() {
-      setInterval(() => this.checkTime(), 55000);
-    }
+  checkReminderTime() {
+    setInterval(() => this.checkTime(), 55000);
+  }
 }
 
 //  var inactivityTime = function () {
