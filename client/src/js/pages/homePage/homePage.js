@@ -64,7 +64,7 @@ class HomePage extends BasePage {
     const currentHour = dateToday.getHours();
     const currentMinutes = dateToday.getMinutes();
 
-    if (currentHour === 15 && currentMinutes === 30) {
+    if (currentHour === 16 && currentMinutes === 0) {
       AudioHub.playSound(notification);
       this.navigate('reminder');
     }
