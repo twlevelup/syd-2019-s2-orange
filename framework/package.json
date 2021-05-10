@@ -49,7 +49,7 @@
     "rxjs-marbles": "5.0.2"
   },
   "dependencies": {
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "rxjs": "6.5.3"
   }
 }
